@@ -5,6 +5,9 @@ P(conf_read,int,(const char *name));
 P(conf_read_simple,int,(const char *name));
 P(conf_write,int,(const char *name));
 
+//P(conf_get_changed,bool,(void));
+//P(conf_set_message_callback,void,(void (*fn)(const char *fmt, va_list ap)));
+
 /* menu.c */
 P(rootmenu,struct menu,);
 
@@ -12,6 +15,9 @@ P(menu_is_visible,bool,(struct menu *menu));
 P(menu_get_prompt,const char *,(struct menu *menu));
 P(menu_get_root_menu,struct menu *,(struct menu *menu));
 P(menu_get_parent_menu,struct menu *,(struct menu *menu));
+
+//P(get_relations_str,struct gstr,(struct symbol **sym_arr));
+//P(menu_is_empty,bool,(struct menu *menu));
 
 /* symbol.c */
 P(symbol_hash,struct symbol *,[SYMBOL_HASHSIZE]);

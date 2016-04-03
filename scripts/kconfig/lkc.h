@@ -37,6 +37,10 @@ extern "C" {
 #define _(text) gettext(text)
 #define N_(text) (text)
 
+#ifndef CONFIG_
+#define CONFIG_ "CONFIG_"
+#endif
+
 
 #define TF_COMMAND	0x0001
 #define TF_PARAM	0x0002
@@ -64,11 +68,14 @@ extern const char conf_def_filename[];
 
 char *conf_get_default_confname(void);
 
+//const char *conf_get_configname(void);
+//void sym_set_change_count(int count);
+
 /* kconfig_load.c */
 void kconfig_load(void);
 
 /* menu.c */
-void menu_init(void);
+void _menu_init(void);
 struct menu *menu_add_menu(void);
 void menu_end_menu(void);
 void menu_add_entry(struct symbol *sym);
